@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Enemy : MonoBehaviour, Damageable
+public class Enemy : MonoBehaviour, Damageable, Scorable
 {
     public int health;
+    public int points;
 
     private Rigidbody2D rb;
 
@@ -13,6 +14,9 @@ public class Enemy : MonoBehaviour, Damageable
     // Start is called before the first frame update
     void Start()
     {
+        Health = health;
+        Points = points;
+        Scoreboard = FindObjectOfType<Scoreboard>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -27,11 +31,12 @@ public class Enemy : MonoBehaviour, Damageable
     {
         // make explosion
         rb.gravityScale = 1f;
+        Score();
     }
 
     #region Damageable Interface
     public int Health { get; set; }
-
+    
     public void Damage()
     {
         Health--;
@@ -39,6 +44,16 @@ public class Enemy : MonoBehaviour, Damageable
         {
             Die();
         }
+    }
+    #endregion
+
+    #region Scorable Interface
+    public int Points { get; set; }
+    public Scoreboard Scoreboard { get; set; }
+
+    public void Score()
+    {
+        Scoreboard.AddPoints(Points);
     }
     #endregion
 }

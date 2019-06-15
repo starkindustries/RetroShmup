@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
+    public GameObject explosionEffect;
+
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -29,5 +31,7 @@ public class Bullet : MonoBehaviour
         {
             objectHit.Damage();
         }
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }
