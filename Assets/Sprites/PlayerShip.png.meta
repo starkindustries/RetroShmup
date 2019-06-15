@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: -7620288893393607388
     second: spr_Player_Ship_strip3_fixed_2
+  - first:
+      213: -5934761212996482088
+    second: PlayerShipIdle
+  - first:
+      213: -3447661468043833857
+    second: PlayerShipUp
+  - first:
+      213: -3031131671914013975
+    second: PlayerShipDown
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -131,64 +140,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_Player_Ship_strip3_fixed_0
+      name: PlayerShipIdle
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 1
-        width: 32
+        width: 34
         height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81164d3e51a2ab34daa9a94e91e88d41
-      internalID: -1819077564780247416
+      spriteID: 9d3b7cbd7bb72f34ab2f67d495986849
+      internalID: -5934761212996482088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_Player_Ship_strip3_fixed_1
+      name: PlayerShipUp
       rect:
         serializedVersion: 2
-        x: 35
-        y: 2
-        width: 32
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 552982f8c9580704a99c46688998c101
-      internalID: 3674035156047540112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_Player_Ship_strip3_fixed_2
-      rect:
-        serializedVersion: 2
-        x: 69
+        x: 34
         y: 1
-        width: 32
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 34
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fdab800f1cf04d46b093db8475675c5
-      internalID: -7620288893393607388
+      spriteID: 5c54e2644e7d6a04ca386d53df51be7c
+      internalID: -3447661468043833857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerShipDown
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1
+        width: 34
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de9f572b570fc34d88b64106fc3f5fa
+      internalID: -3031131671914013975
       vertices: []
       indices: 
       edges: []
