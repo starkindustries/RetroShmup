@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6240777809378232843}
   - component: {fileID: -5335876336248929675}
   - component: {fileID: 6258455297815638775}
+  - component: {fileID: 5867164823185179499}
   m_Layer: 0
-  m_Name: spr_Flight_Round_10_strip4_0
+  m_Name: BulletLevel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -442511769
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -1505303821
+  m_SortingLayer: 3
+  m_SortingOrder: 50
   m_Sprite: {fileID: -3989692607250276903, guid: 8cd93c9c54bc1674c964ecacb2e99eaa,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -94,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 2262955046682056640}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6d515c9e2c053c74e8400ef05e658e6e, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -116,7 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  rb: {fileID: 0}
 --- !u!50 &6258455297815638775
 Rigidbody2D:
   serializedVersion: 4
@@ -138,3 +138,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &5867164823185179499
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2262955046682056640}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.015, y: -0.015}
+  serializedVersion: 2
+  m_Radius: 0.05

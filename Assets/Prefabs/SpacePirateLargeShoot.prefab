@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8779701992526320921}
   - component: {fileID: 8779701992526320920}
   - component: {fileID: 3994921465914514977}
+  - component: {fileID: 7516409556286465768}
+  - component: {fileID: 464149510184967344}
   m_Layer: 0
   m_Name: SpacePirateLargeShoot
   m_TagString: Untagged
@@ -123,3 +125,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7516409556286465768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779701992526320927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa45cc49913c2b43a420c7d0e8fafe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+--- !u!70 &464149510184967344
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779701992526320927}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05, y: -0.1}
+  m_Size: {x: 2, y: 0.7}
+  m_Direction: 1
