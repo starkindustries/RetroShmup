@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: e642ec79413f0e8449a8c0728ca49fd5
+guid: c837b6cec981fa648aacb775b50104a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1379492770092848431
-    second: spr_Space_Pirate_Large_Shoot_strip2_0
+      213: -1807186864523335959
+    second: SpacePirateLargeShoot1
   - first:
-      213: 1162410293412458978
-    second: spr_Space_Pirate_Large_Shoot_strip2_1
+      213: -4433037271249410144
+    second: SpacePirateLargeShoot2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_Space_Pirate_Large_Shoot_strip2_0
+      name: SpacePirateLargeShoot1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 0
-        width: 74
-        height: 32
+        x: 10
+        y: 1
+        width: 72
+        height: 30
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b111e331b917eb147a61d694a8aef16b
-      internalID: -1379492770092848431
+      spriteID: d92d2bd890153ea46948b7e4fd813f9a
+      internalID: -1807186864523335959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_Space_Pirate_Large_Shoot_strip2_1
+      name: SpacePirateLargeShoot2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 0
-        width: 74
-        height: 32
+        x: 106
+        y: 1
+        width: 72
+        height: 30
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b818799446cd8f41af7e750395f2caf
-      internalID: 1162410293412458978
+      spriteID: 52adef588f9a698468c53171448b4672
+      internalID: -4433037271249410144
       vertices: []
       indices: 
       edges: []
