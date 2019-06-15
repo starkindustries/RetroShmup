@@ -4,10 +4,10 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -1807186864523335959
-    second: SpacePirateLargeShoot1
+    second: SpacePirateLargeShoot0
   - first:
       213: -4433037271249410144
-    second: SpacePirateLargeShoot2
+    second: SpacePirateLargeShoot1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -128,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpacePirateLargeShoot1
+      name: SpacePirateLargeShoot0
       rect:
         serializedVersion: 2
         x: 10
@@ -149,7 +149,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpacePirateLargeShoot2
+      name: SpacePirateLargeShoot1
       rect:
         serializedVersion: 2
         x: 106

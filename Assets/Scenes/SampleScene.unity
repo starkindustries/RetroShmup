@@ -582,6 +582,18 @@ MonoBehaviour:
     enemy: {fileID: 8779701992526320927, guid: 02c73cd32689b8044b2750e9fcb438ee, type: 3}
     count: 8
     delayBetweenEnemies: 1
+  - name: Wave4
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    count: 10
+    delayBetweenEnemies: 1
+  - name: Wave5
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    count: 15
+    delayBetweenEnemies: 1
+  - name: Wave6
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    count: 20
+    delayBetweenEnemies: 1
   delayBetweenWaves: 2
 --- !u!114 &503926964
 MonoBehaviour:
