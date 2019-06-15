@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: fa018566e83ac144899e31a26a802a07
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 329174978141528380
+    second: spr_Bloom_Round_12_strip15_0
+  - first:
+      213: -2792371311402699011
+    second: spr_Bloom_Round_12_strip15_1
+  - first:
+      213: -2377156675980268752
+    second: spr_Bloom_Round_12_strip15_2
+  - first:
+      213: 2778083875021152411
+    second: spr_Bloom_Round_12_strip15_3
+  - first:
+      213: -7964195431554954094
+    second: spr_Bloom_Round_12_strip15_4
+  - first:
+      213: -1283162437790442187
+    second: spr_Bloom_Round_12_strip15_5
+  - first:
+      213: 6058977542819470072
+    second: spr_Bloom_Round_12_strip15_6
+  - first:
+      213: -2016332018882374045
+    second: spr_Bloom_Round_12_strip15_7
+  - first:
+      213: 733414393715576333
+    second: spr_Bloom_Round_12_strip15_8
+  - first:
+      213: 5382329266457839227
+    second: spr_Bloom_Round_12_strip15_9
+  - first:
+      213: -2803942383257946622
+    second: spr_Bloom_Round_12_strip15_10
+  - first:
+      213: 339792746740059545
+    second: spr_Bloom_Round_12_strip15_11
+  - first:
+      213: 3008540726702877022
+    second: spr_Bloom_Round_12_strip15_12
+  - first:
+      213: -6809299248794885649
+    second: spr_Bloom_Round_12_strip15_13
+  - first:
+      213: 591602278702399511
+    second: spr_Bloom_Round_12_strip15_14
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -120,7 +165,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fa6aa2e10bedb45b462e9cf73f4a60
+      internalID: 329174978141528380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.46153846, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa7f5abaf891ab47943af7cfe4aab5e
+      internalID: -2792371311402699011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed4c484f2e941647bc0cc75d35f7910
+      internalID: -2377156675980268752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_3
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34190ed2a355c44a9084769731bc9f3
+      internalID: 2778083875021152411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070da6645d702274d9c7840b38de0fb7
+      internalID: -7964195431554954094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4248bf8709bf84ea7db55f238bce9b
+      internalID: -1283162437790442187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f68aa682f87d94096d2adf31a98e01
+      internalID: 6058977542819470072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_7
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bd7675196f6914fbb5d0922aff0a90
+      internalID: -2016332018882374045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_8
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2c1c828ce8db94081d3a6e20b41a09
+      internalID: 733414393715576333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_9
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b95c8906cc4ee4ab8a2143e277d04c
+      internalID: 5382329266457839227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_10
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25b18729e083df46b0b4422acb6438c
+      internalID: -2803942383257946622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_11
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c675b7a30326c5742a1fef70b572606a
+      internalID: 339792746740059545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_12
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb83d1c79e2cb4840ba706a81f3e651c
+      internalID: 3008540726702877022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_13
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa437174ebbe077458c203e46f1cceeb
+      internalID: -6809299248794885649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Bloom_Round_12_strip15_14
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 13
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8577ff81dc00dfb40ae758fa01796c5a
+      internalID: 591602278702399511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
