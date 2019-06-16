@@ -11,6 +11,9 @@ public class Player : MonoBehaviour, Damageable
 
     private Rigidbody2D rb;
     private GameManager gameManager;
+    private Vector2 screenBounds;
+    private float objectWidth;
+    private float objectHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,10 @@ public class Player : MonoBehaviour, Damageable
         Health = health;
         rb = GetComponent<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        Debug.Log("Screen bounds: " + screenBounds.ToString());
+        objectWidth  = GetComponent<SpriteRenderer>().bounds.extents.x; // extents = size of width / 2
+        objectHeight = GetComponent<SpriteRenderer>().bounds.extents.y; // extents = size of height / 2
     }
 
     // Update is called once per frame
@@ -51,7 +58,14 @@ public class Player : MonoBehaviour, Damageable
         float yAxis = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(xAxis, yAxis);
         rb.velocity = movement * speed;
-        // rb.AddForce(movement * speed);                
+        // rb.AddForce(movement * speed);
+
+        // Keep player within screen boundaries
+        // https://pressstart.vip/tutorials/2018/06/28/41/keep-object-in-bounds.html
+        Vector3 clampPosition = transform.position;
+        clampPosition.x = Mathf.Clamp(transform.position.x, screenBounds.x * -1 + objectWidth,  screenBounds.x - objectWidth);
+        clampPosition.y = Mathf.Clamp(transform.position.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        transform.position = clampPosition;
     }    
 
     void Die()
