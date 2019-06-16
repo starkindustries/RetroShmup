@@ -10,14 +10,13 @@ public class WaveSpawner : MonoBehaviour
         public string name;
         public GameObject enemy;
         public FlightPath flightPath;
-        public int count;
-        public float delayBetweenEnemies;
+        public int enemyCount;
+        public float delayBeforeWave;
+        public float delayBetweenEnemies;        
+        public float delayAfterWave;
     }
 
-    public Transform[] spawnLocations;
-    public GameObject enemy;
     public Wave[] waves;
-    public float delayBetweenWaves;
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +35,15 @@ public class WaveSpawner : MonoBehaviour
         for(int i=0; i < waves.Length; i++)
         {
             Wave currentWave = waves[i];
-            for(int j=0; j < currentWave.count; j++)
+            yield return new WaitForSeconds(currentWave.delayBeforeWave);
+            for (int j=0; j < currentWave.enemyCount; j++)
             {
-                int spawnLocationIndex = j % spawnLocations.Length;
-                // GameObject newEnemy = Instantiate(currentWave.enemy, spawnLocations[spawnLocationIndex].position, Quaternion.identity);
                 GameObject newEnemy = Instantiate(currentWave.enemy);
                 Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
-                enemyComponent.SetFlightPath(currentWave.flightPath);
-                // newEnemy.transform.Rotate(0f, 180f, 0f);
-                // newEnemy.GetComponent<Rigidbody2D>().AddForce(newEnemy.transform.right * 50f);
+                enemyComponent.SetFlightPath(currentWave.flightPath);                
                 yield return new WaitForSeconds(waves[i].delayBetweenEnemies);
             }
-            yield return new WaitForSeconds(delayBetweenWaves);
+            yield return new WaitForSeconds(currentWave.delayAfterWave);
         }        
         yield break;
     }
