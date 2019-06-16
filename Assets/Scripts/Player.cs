@@ -8,18 +8,26 @@ public class Player : MonoBehaviour, Damageable
     public float speed;
     public GameObject bulletPrefab;
     public Transform firePoint;
-    private Rigidbody2D rb;    
+
+    private Rigidbody2D rb;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         Health = health;
         rb = GetComponent<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     private void Update()
     {
+        if (gameManager.GameIsPaused())
+        {
+            return;
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             ShootBullet();
