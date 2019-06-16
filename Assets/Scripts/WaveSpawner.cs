@@ -9,6 +9,7 @@ public class WaveSpawner : MonoBehaviour
     {
         public string name;
         public GameObject enemy;
+        public FlightPath flightPath;
         public int count;
         public float delayBetweenEnemies;
     }
@@ -38,9 +39,12 @@ public class WaveSpawner : MonoBehaviour
             for(int j=0; j < currentWave.count; j++)
             {
                 int spawnLocationIndex = j % spawnLocations.Length;
-                GameObject newEnemy = Instantiate(currentWave.enemy, spawnLocations[spawnLocationIndex].position, Quaternion.identity);
-                newEnemy.transform.Rotate(0f, 180f, 0f);
-                newEnemy.GetComponent<Rigidbody2D>().AddForce(newEnemy.transform.right * 50f);
+                // GameObject newEnemy = Instantiate(currentWave.enemy, spawnLocations[spawnLocationIndex].position, Quaternion.identity);
+                GameObject newEnemy = Instantiate(currentWave.enemy);
+                Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
+                enemyComponent.SetFlightPath(currentWave.flightPath);
+                // newEnemy.transform.Rotate(0f, 180f, 0f);
+                // newEnemy.GetComponent<Rigidbody2D>().AddForce(newEnemy.transform.right * 50f);
                 yield return new WaitForSeconds(waves[i].delayBetweenEnemies);
             }
             yield return new WaitForSeconds(delayBetweenWaves);

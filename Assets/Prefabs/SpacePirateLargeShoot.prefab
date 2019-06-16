@@ -139,6 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   points: 100
+  speed: 1
+  rotationSpeed: 50
 --- !u!70 &464149510184967344
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

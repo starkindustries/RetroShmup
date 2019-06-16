@@ -139,6 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   points: 50
+  speed: 3
+  rotationSpeed: 100
 --- !u!61 &1634352202668559358
 BoxCollider2D:
   m_ObjectHideFlags: 0
