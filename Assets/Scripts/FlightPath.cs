@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public enum FlightPathName
+{
+    RTLStraightAcross,
+    RTLLoopFromBelow
+}
+
 public static class FlightPath
 {
-    public static Vector2[] GetFlightPathByIndex(int index, int param)
+    public static Vector2[] GetFlightPath(FlightPathName flightPath, int param)
     {
-        switch(index)
+        switch(flightPath)
         {
-            case 0:
+            case FlightPathName.RTLStraightAcross:
                 return RTLStraightAcross(y: param);
+            case FlightPathName.RTLLoopFromBelow:
+                return RTLLoopFromBelow();
             default:
-                Debug.LogError("Invalid index passed to function GetFlightPathByIndex: " + index);
-                return new Vector2[2];                
+                Debug.LogError("Invalid flight path GetFlightPath: " + flightPath.ToString());
+                return new Vector2[2];
         }
     }
     
@@ -27,6 +36,19 @@ public static class FlightPath
             new Vector2(-12, y)
         };               
         Debug.Log("Path: " + path.ToString());
+        return path;
+    }
+
+    public static Vector2[] RTLLoopFromBelow()
+    {
+        Vector2[] path =
+        {
+            new Vector2(12, -5),
+            new Vector2(0, -5),
+            new Vector2(0, 5),
+            new Vector2(0, -3),
+            new Vector2(-12, -5)
+        };
         return path;
     }
 }
