@@ -77,10 +77,10 @@ MonoBehaviour:
   firePoint: {fileID: 4109044365291900027}
   projectile: {fileID: 2262955046682056640, guid: 9a1589f827fd4114d92f31ea9a6d475b,
     type: 3}
-  fireRate: 5
+  fireRate: 2
   burstMode: 1
   continuousFireTime: 1
-  cooldownTime: 2
+  cooldownTime: 3
   aimAtPlayer: 1
 --- !u!1 &8779701992526320927
 GameObject:
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7516409556286465768}
   - component: {fileID: 464149510184967344}
   m_Layer: 0
-  m_Name: SpacePirateLargeShoot
+  m_Name: SpacePirateLargeAutoAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

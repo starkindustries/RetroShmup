@@ -1214,27 +1214,182 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemy: {fileID: 8779701992526320927, guid: 02c73cd32689b8044b2750e9fcb438ee, type: 3}
-    flightPath: 0
-    flightParam: -3
-    enemyCount: 1
-    delayBeforeWave: 3
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 2
-  - enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+  - name: Wave1 MiniStraightAcross
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
     flightPath: 0
     flightParam: 3
     enemyCount: 8
     delayBeforeWave: 0
     delayBetweenEnemies: 0.5
     delayAfterWave: 2
-  - enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 1
-    flightParam: 0
+  - name: Wave2 MiniStraightAcross
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: -3
     enemyCount: 8
     delayBeforeWave: 0
     delayBetweenEnemies: 0.5
     delayAfterWave: 2
+  - name: Wave3 LargeStraightAcross
+    enemy: {fileID: 6248222383674694245, guid: af85be768876ead499857c64a4f0867c, type: 3}
+    flightPath: 0
+    flightParam: 3
+    enemyCount: 1
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0
+    delayAfterWave: 2
+  - name: Wave4 LargeStraightAcross
+    enemy: {fileID: 6248222383674694245, guid: af85be768876ead499857c64a4f0867c, type: 3}
+    flightPath: 0
+    flightParam: -3
+    enemyCount: 1
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0
+    delayAfterWave: 2
+  - name: Wave5 MiniLoopBelow
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 1
+    flightParam: 0
+    enemyCount: 6
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 3
+  - name: Wave6 MiniLoopAbove
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 2
+    flightParam: 0
+    enemyCount: 6
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 3
+  - name: Wave6 LargeRound1
+    enemy: {fileID: 6248222383674694245, guid: af85be768876ead499857c64a4f0867c, type: 3}
+    flightPath: 0
+    flightParam: 1
+    enemyCount: 1
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0
+    delayAfterWave: 2
+  - name: Wave7 LargeRound2
+    enemy: {fileID: 6248222383674694245, guid: af85be768876ead499857c64a4f0867c, type: 3}
+    flightPath: 0
+    flightParam: -1
+    enemyCount: 1
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0
+    delayAfterWave: 2
+  - name: Wave8 MiniStraightRound1
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: -5
+    enemyCount: 8
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 4
+  - name: Wave9 MiniStraightRound2
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: 5
+    enemyCount: 8
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 5
+  - name: Wave10 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: 5
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 1
+  - name: Wave11 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: 4
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave12 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: 3
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave13 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: 2
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave14 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: 1
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave15 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: 0
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave16 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: -1
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave17 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: -2
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave18 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: -3
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave19 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: -4
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave20 MiniPairs
+    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
+    flightPath: 0
+    flightParam: -5
+    enemyCount: 2
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
+  - name: Wave21 LargeAutoFire
+    enemy: {fileID: 8779701992526320927, guid: 02c73cd32689b8044b2750e9fcb438ee, type: 3}
+    flightPath: 0
+    flightParam: 0
+    enemyCount: 1
+    delayBeforeWave: 0
+    delayBetweenEnemies: 0.5
+    delayAfterWave: 0.5
 --- !u!1 &730813168
 GameObject:
   m_ObjectHideFlags: 0

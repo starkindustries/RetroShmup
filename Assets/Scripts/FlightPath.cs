@@ -6,7 +6,8 @@ using UnityEngine;
 public enum FlightPathName
 {
     RTLStraightAcross,
-    RTLLoopFromBelow
+    RTLLoopFromBelow,
+    RTLLoopFromAbove
 }
 
 public static class FlightPath
@@ -19,6 +20,8 @@ public static class FlightPath
                 return RTLStraightAcross(y: param);
             case FlightPathName.RTLLoopFromBelow:
                 return RTLLoopFromBelow();
+            case FlightPathName.RTLLoopFromAbove:
+                return RTLLoopFromAbove();
             default:
                 Debug.LogError("Invalid flight path GetFlightPath: " + flightPath.ToString());
                 return new Vector2[2];
@@ -35,7 +38,6 @@ public static class FlightPath
             new Vector2(12, y),
             new Vector2(-12, y)
         };               
-        Debug.Log("Path: " + path.ToString());
         return path;
     }
 
@@ -48,6 +50,19 @@ public static class FlightPath
             new Vector2(0, 5),
             new Vector2(0, -3),
             new Vector2(-12, -5)
+        };
+        return path;
+    }
+
+    public static Vector2[] RTLLoopFromAbove()
+    {
+        Vector2[] path =
+        {
+            new Vector2(12, 5),
+            new Vector2(0, 5),
+            new Vector2(0, -5),
+            new Vector2(0, 3),
+            new Vector2(-12, 5)
         };
         return path;
     }

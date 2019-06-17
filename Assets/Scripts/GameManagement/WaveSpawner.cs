@@ -7,6 +7,7 @@ public class WaveSpawner : MonoBehaviour
     [System.Serializable]
     public class Wave
     {
+        public string name;
         public GameObject enemy;
         public FlightPathName flightPath;
         public int flightParam = 0;
@@ -36,6 +37,7 @@ public class WaveSpawner : MonoBehaviour
         {
             Wave currentWave = waves[i];
             yield return new WaitForSeconds(currentWave.delayBeforeWave);
+            Debug.Log("Starting wave: " + currentWave.name);
             for (int j=0; j < currentWave.enemyCount; j++)
             {
                 GameObject newEnemy = Instantiate(currentWave.enemy);
