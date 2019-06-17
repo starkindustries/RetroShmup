@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: 35ffb820036ab0a4ca9c9b7be792d48e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4486817825893865450
+    second: spr_Explosion_Ring_2_strip5_0
+  - first:
+      213: -8431002346057995768
+    second: spr_Explosion_Ring_2_strip5_1
+  - first:
+      213: 6291366334224427999
+    second: spr_Explosion_Ring_2_strip5_2
+  - first:
+      213: -5609436746454398120
+    second: spr_Explosion_Ring_2_strip5_3
+  - first:
+      213: -390233582735223734
+    second: spr_Explosion_Ring_2_strip5_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -120,7 +135,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_2_strip5_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8356f59fca1bb64e98f62f213e7079f
+      internalID: 4486817825893865450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_2_strip5_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af4430a1efae534d9722479acb5d6a4
+      internalID: -8431002346057995768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_2_strip5_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2422f2d976226084cb5228f7330a014c
+      internalID: 6291366334224427999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_2_strip5_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b113c896862c3a54a904126b5d1ef4a0
+      internalID: -5609436746454398120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_2_strip5_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74e281b02185cd47ac1b835ded30e1f
+      internalID: -390233582735223734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

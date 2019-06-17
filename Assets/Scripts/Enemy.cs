@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour, Damageable, Scorable
 {
+    public GameObject explosion;
+
     public int health;
     public int points;
     public float speed;
@@ -81,10 +83,21 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
 
     private void Die()
     {
-        // make explosion
-        isDead = true;
-        rb.gravityScale = 1f;
+        isDead = true;        
         Score();
+        rb.gravityScale = 1f;
+        StartCoroutine(Explode());
+    }
+
+    private IEnumerator Explode()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+            yield return new WaitForSeconds(0.1f);
+        }
+        Destroy(this.gameObject);
+        yield break;
     }
 
     #region Damageable Interface

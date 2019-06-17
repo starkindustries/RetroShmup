@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 0885784d9c0466447a8de0f03e977471
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3084525685288643113
+    second: spr_Explosion_Ring_strip4_0
+  - first:
+      213: -6527732413620397219
+    second: spr_Explosion_Ring_strip4_1
+  - first:
+      213: 6753560476504209156
+    second: spr_Explosion_Ring_strip4_2
+  - first:
+      213: 1001619500915989938
+    second: spr_Explosion_Ring_strip4_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -120,7 +132,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_strip4_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7291d393b653794a93a46e40cf3070c
+      internalID: -3084525685288643113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_strip4_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3397ae3faf4d26b4cbd60e6e7073e9f7
+      internalID: -6527732413620397219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_strip4_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c431889b4b440f243acfb2277db30515
+      internalID: 6753560476504209156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Explosion_Ring_strip4_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354f898c08d2a054287666d5adc86ab0
+      internalID: 1001619500915989938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
