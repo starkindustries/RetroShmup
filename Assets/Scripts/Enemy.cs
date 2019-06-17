@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     private bool isDead = false;
     private Rigidbody2D rb;
     private int currentTargetIndex;
-    private FlightPath flightPath;
+    private Vector2[] flightPath;
     private float minDistance = 1f;
 
     #region Start & Update
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
         rb = GetComponent<Rigidbody2D>();
 
         // Set starting position
-        transform.position = flightPath.points[0].position;
+        transform.position = flightPath[0];
         
         currentTargetIndex = 1;
 
@@ -45,13 +45,13 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     {
         if(!isDead)
         {
-            float distance = Vector2.Distance(flightPath.points[currentTargetIndex].position, rb.position);
-            if ((distance < minDistance) && (currentTargetIndex < flightPath.points.Length - 1))
+            float distance = Vector2.Distance(flightPath[currentTargetIndex], rb.position);
+            if ((distance < minDistance) && (currentTargetIndex < flightPath.Length - 1))
             {
                 currentTargetIndex++;
             }
 
-            Vector2 direction = (Vector2)flightPath.points[currentTargetIndex].position - rb.position;
+            Vector2 direction = flightPath[currentTargetIndex] - rb.position;
             direction.Normalize();
             float rotateAmount = Vector3.Cross(direction, transform.right).z;
             rb.angularVelocity = -rotateAmount * rotationSpeed; // float        
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     }
     #endregion
 
-    public void SetFlightPath(FlightPath path)
+    public void SetFlightPath(Vector2[] path)
     {
         flightPath = path;
     }

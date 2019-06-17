@@ -7,9 +7,9 @@ public class WaveSpawner : MonoBehaviour
     [System.Serializable]
     public class Wave
     {
-        public string name;
         public GameObject enemy;
-        public FlightPath flightPath;
+        public int flightIndex;
+        public int flightParam = 0;
         public int enemyCount;
         public float delayBeforeWave;
         public float delayBetweenEnemies;        
@@ -40,7 +40,9 @@ public class WaveSpawner : MonoBehaviour
             {
                 GameObject newEnemy = Instantiate(currentWave.enemy);
                 Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
-                enemyComponent.SetFlightPath(currentWave.flightPath);                
+
+                Vector2[] path = FlightPath.GetFlightPathByIndex(currentWave.flightIndex, currentWave.flightParam);
+                enemyComponent.SetFlightPath(path);
                 yield return new WaitForSeconds(waves[i].delayBetweenEnemies);
             }
             yield return new WaitForSeconds(currentWave.delayAfterWave);
