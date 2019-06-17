@@ -60,6 +60,11 @@ public class GameManager : MonoBehaviour
         return gameIsPaused;
     }
 
+    public void GameOver()
+    {
+
+    }
+
     public Transform GetPlayerTransform()
     {
         return player.transform;

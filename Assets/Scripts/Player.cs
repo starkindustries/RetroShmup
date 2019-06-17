@@ -8,12 +8,16 @@ public class Player : MonoBehaviour, Damageable
     public float speed;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public GameObject explosionRing;
+    public GameObject explosionNuclear;
 
     private Rigidbody2D rb;
     private GameManager gameManager;
     private Vector2 screenBounds;
     private float objectWidth;
     private float objectHeight;
+    private bool isDead = false;
+    private bool isDying = false; // so that we don't call death animation twice
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +47,10 @@ public class Player : MonoBehaviour, Damageable
 
     private void FixedUpdate()
     {
-        Move();
+        if(!isDead)
+        {
+            Move();
+        }        
     }
 
     private void ShootBullet()
@@ -69,10 +76,32 @@ public class Player : MonoBehaviour, Damageable
     }    
 
     void Die()
+    {        
+        if(!isDying)
+        {
+            StartCoroutine(Explode());
+        }        
+        isDead = true;
+    }
+
+    private IEnumerator Explode()
     {
-        // Explode
+        isDying = true;
+        rb.gravityScale = 3.0f;
+        while (transform.position.y > screenBounds.y * -1)
+        {
+            Instantiate(explosionRing, transform.position, transform.rotation);
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+        // Disable player sprite
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         sprite.enabled = false;
+        
+        // Release the nuclear explosion
+        Vector2 explodeLocation = new Vector2(transform.position.x, screenBounds.y * -1);
+        Instantiate(explosionNuclear, explodeLocation, transform.rotation);
+        yield return new WaitForSeconds(0.75f);
     }
 
     #region Damageable Interface

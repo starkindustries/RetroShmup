@@ -2924,6 +2924,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2262955046682056640, guid: 9a1589f827fd4114d92f31ea9a6d475b,
     type: 3}
   firePoint: {fileID: 437756906}
+  explosionRing: {fileID: 3213717130424831184, guid: 2e7e231fda8b1364195ff0dee94ca504,
+    type: 3}
+  explosionNuclear: {fileID: 5601820802132687252, guid: 87c7d977319a161489acb5f4783258b2,
+    type: 3}
 --- !u!50 &1380091373
 Rigidbody2D:
   serializedVersion: 4
