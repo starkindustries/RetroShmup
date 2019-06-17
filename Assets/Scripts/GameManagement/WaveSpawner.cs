@@ -33,6 +33,7 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnEnemyWaves()
     {
+        // Spawn all enemy waves!
         for(int i=0; i < waves.Length; i++)
         {
             Wave currentWave = waves[i];
@@ -48,7 +49,16 @@ public class WaveSpawner : MonoBehaviour
                 yield return new WaitForSeconds(waves[i].delayBetweenEnemies);
             }
             yield return new WaitForSeconds(currentWave.delayAfterWave);
-        }        
-        yield break;
+        }
+
+        // Wait for all enemies to die (if player survives, that is)
+        while(GameObject.FindGameObjectWithTag("Enemy") != null)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+
+        // All enemies cleared! Level completed!
+        GameManager.Instance.LevelComplete();
+        yield break;        
     }
 }

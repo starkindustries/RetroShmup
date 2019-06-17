@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
+    public GameObject winScreen;
 
     private GameObject player;
     private bool gameIsPaused = false;
@@ -83,6 +84,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("Quit game");        
         LevelChanger.Instance.FadetoScene(sceneIndex: 0);
         Time.timeScale = 1f;
+    }
+
+    public void LevelComplete()
+    {
+        Debug.Log("Level Complete!");
+        gameIsOver = true;
+        pauseButton.SetActive(false);
+        winScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public Transform GetPlayerTransform()
