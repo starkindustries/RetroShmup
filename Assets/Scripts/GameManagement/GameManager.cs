@@ -7,8 +7,36 @@ public class GameManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
+    public GameObject player;
 
     private bool gameIsPaused = false;
+
+    #region Singleton Patter
+    //*****************
+    // Singleton pattern
+    // https://gamedev.stackexchange.com/a/116010/123894
+    private static GameManager _instance;
+    public static GameManager Instance { get { return _instance; } }
+
+    private void Awake()
+    {
+        // Singleton Enforcement Code
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+    #endregion
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     // Game Actions
     public void Pause()
@@ -30,5 +58,10 @@ public class GameManager : MonoBehaviour
     public bool GameIsPaused()
     {
         return gameIsPaused;
+    }
+
+    public Transform GetPlayerTransform()
+    {
+        return player.transform;
     }
 }
