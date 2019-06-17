@@ -45,17 +45,7 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     {
         if(!isDead)
         {
-            float distance = Vector2.Distance(flightPath[currentTargetIndex], rb.position);
-            if ((distance < minDistance) && (currentTargetIndex < flightPath.Length - 1))
-            {
-                currentTargetIndex++;
-            }
-
-            Vector2 direction = flightPath[currentTargetIndex] - rb.position;
-            direction.Normalize();
-            float rotateAmount = Vector3.Cross(direction, transform.right).z;
-            rb.angularVelocity = -rotateAmount * rotationSpeed; // float        
-            rb.velocity = transform.right * speed; // vector2
+            TraverseFlightPath();
         }
     }
     #endregion
@@ -63,6 +53,30 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     public void SetFlightPath(Vector2[] path)
     {
         flightPath = path;
+    }
+
+    public void TraverseFlightPath()
+    {
+        float distance = Vector2.Distance(flightPath[currentTargetIndex], rb.position);
+        if ((distance < minDistance))
+        {            
+            if (currentTargetIndex < flightPath.Length - 1)
+            {
+                // if current index is less than the last index then increment
+                currentTargetIndex++;
+            }
+            else
+            {
+                // else if the current index is on the last index then journey complete!
+                Destroy(this.gameObject);
+            }
+        }
+
+        Vector2 direction = flightPath[currentTargetIndex] - rb.position;
+        direction.Normalize();
+        float rotateAmount = Vector3.Cross(direction, transform.right).z;
+        rb.angularVelocity = -rotateAmount * rotationSpeed; // float        
+        rb.velocity = transform.right * speed; // vector2
     }
 
     private void Die()
