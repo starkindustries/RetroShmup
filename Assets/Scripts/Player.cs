@@ -102,6 +102,9 @@ public class Player : MonoBehaviour, Damageable
         Vector2 explodeLocation = new Vector2(transform.position.x, screenBounds.y * -1);
         Instantiate(explosionNuclear, explodeLocation, transform.rotation);
         yield return new WaitForSeconds(0.75f);
+
+        // Call game over
+        GameManager.Instance.GameOver();
     }
 
     #region Damageable Interface

@@ -7,9 +7,10 @@ public class GameManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
-    public GameObject player;
 
+    private GameObject player;
     private bool gameIsPaused = false;
+    private bool gameIsOver = false;
 
     #region Singleton Patter
     //*****************
@@ -62,7 +63,26 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Debug.Log("Game Over");
+        gameIsOver = true;
+        pauseButton.SetActive(false);
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }    
 
+    public void Restart()
+    {
+        Debug.Log("Restart game");
+        LevelChanger.Instance.FadetoScene(sceneIndex: 1);
+        Time.timeScale = 1f;
+        gameIsOver = false;
+    }
+
+    public void Quit()
+    {
+        Debug.Log("Quit game");        
+        LevelChanger.Instance.FadetoScene(sceneIndex: 0);
+        Time.timeScale = 1f;
     }
 
     public Transform GetPlayerTransform()
