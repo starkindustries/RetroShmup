@@ -61,8 +61,13 @@ public class Player : MonoBehaviour, Damageable
 
     void Move()
     {
-        float xAxis = Input.GetAxis("Horizontal");
-        float yAxis = Input.GetAxis("Vertical");
+
+        // float xAxis = Input.GetAxis("Horizontal");
+        // float yAxis = Input.GetAxis("Vertical");
+
+        float xAxis = Input.acceleration.x;
+        float yAxis = Input.acceleration.y;
+
         Vector2 movement = new Vector2(xAxis, yAxis);
         rb.velocity = movement * speed;
         // rb.AddForce(movement * speed);
