@@ -5,9 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, Damageable
 {
     public int health;
-    public float speed;
-    public GameObject bulletPrefab;
-    public Transform firePoint;
+    public float speed;    
     public GameObject explosionRing;
     public GameObject explosionNuclear;
 
@@ -37,12 +35,7 @@ public class Player : MonoBehaviour, Damageable
         if (gameManager.GameIsPaused())
         {
             return;
-        }
-        
-        if (Input.GetButtonDown("Fire1"))
-        {
-            ShootBullet();
-        }
+        }       
     }
 
     private void FixedUpdate()
@@ -51,12 +44,6 @@ public class Player : MonoBehaviour, Damageable
         {
             Move();
         }        
-    }
-    
-    private void ShootBullet()
-    {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        // AudioManager.Instance.Play("Shoot");
     }
 
     void Move()
