@@ -67,6 +67,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7516409556286465768, guid: 02c73cd32689b8044b2750e9fcb438ee,
+        type: 3}
+      propertyPath: points
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516409556286465768, guid: 02c73cd32689b8044b2750e9fcb438ee,
+        type: 3}
+      propertyPath: pointsEffect
+      value: 
+      objectReference: {fileID: 7895811066496223506, guid: 89f764bcb24bda247b8476aa95b67cb8,
+        type: 3}
     - target: {fileID: 3955088818799035777, guid: 02c73cd32689b8044b2750e9fcb438ee,
         type: 3}
       propertyPath: aimAtPlayer

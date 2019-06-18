@@ -6,11 +6,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, Damageable, Scorable
 {
     public GameObject explosion;
+    public GameObject pointsEffect;
 
     public int health;
     public int points;
     public float speed;
-    public float rotationSpeed;
+    public float rotationSpeed;    
     
     private bool isDead = false;
     private Rigidbody2D rb;
@@ -126,6 +127,7 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     public void Score()
     {
         Scoreboard.AddPoints(Points);
+        Instantiate(pointsEffect, transform.position, Quaternion.identity);
     }
     #endregion
 }

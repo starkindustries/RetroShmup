@@ -38,7 +38,7 @@ public class Player : MonoBehaviour, Damageable
         {
             return;
         }
-
+        
         if (Input.GetButtonDown("Fire1"))
         {
             ShootBullet();
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour, Damageable
             Move();
         }        
     }
-
+    
     private void ShootBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);

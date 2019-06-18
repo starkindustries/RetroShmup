@@ -222,6 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 3213717130424831184, guid: 2e7e231fda8b1364195ff0dee94ca504,
     type: 3}
+  pointsEffect: {fileID: 8939327587949143718, guid: 16ea251d65b5e17428027f1fd5d54cb5,
+    type: 3}
   health: 2
   points: 100
   speed: 1
