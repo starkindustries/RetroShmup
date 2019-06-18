@@ -5546,7 +5546,6 @@ GameObject:
   - component: {fileID: 1380091372}
   - component: {fileID: 1380091373}
   - component: {fileID: 1380091374}
-  - component: {fileID: 1380091375}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5633,9 +5632,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   speed: 10
-  bulletPrefab: {fileID: 2262955046682056640, guid: 9a1589f827fd4114d92f31ea9a6d475b,
-    type: 3}
-  firePoint: {fileID: 0}
   explosionRing: {fileID: 3213717130424831184, guid: 2e7e231fda8b1364195ff0dee94ca504,
     type: 3}
   explosionNuclear: {fileID: 5601820802132687252, guid: 87c7d977319a161489acb5f4783258b2,
@@ -5697,18 +5693,6 @@ PolygonCollider2D:
       - {x: 0.46854854, y: -0.028277278}
       - {x: 0.46915483, y: 0.060999155}
       - {x: 0.31127548, y: 0.18984944}
---- !u!114 &1380091375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380091369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e88e9cacf51e54479ea5a1f6326bd39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1409545287
 PrefabInstance:
   m_ObjectHideFlags: 0

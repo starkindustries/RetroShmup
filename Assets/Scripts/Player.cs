@@ -26,46 +26,73 @@ public class Player : MonoBehaviour, Damageable
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         Debug.Log("Screen bounds: " + screenBounds.ToString());
         objectWidth  = GetComponent<SpriteRenderer>().bounds.extents.x; // extents = size of width / 2
-        objectHeight = GetComponent<SpriteRenderer>().bounds.extents.y; // extents = size of height / 2
+        objectHeight = GetComponent<SpriteRenderer>().bounds.extents.y; // extents = size of height / 2        
     }
 
+    // Note: As a general rule:
+    // Input should be in Update(), so that there is no chance of having a frame 
+    // in which you miss the player input, which could happen if you placed it in 
+    // FixedUpdate().
+    //         
+    // Physics calculations should be in FixedUpdate(), so that they are consistent 
+    // and synchronised with the global physics timestep of the game (by default 50 
+    // times per second).
+    // https://answers.unity.com/questions/620981/input-and-applying-physics-update-or-fixedupdate.html
     // Update is called once per frame
     private void Update()
     {
         if (gameManager.GameIsPaused())
         {
             return;
-        }       
+        }
+        
+        if(isDead)
+        {
+            return;
+        }
+      
+        // Get Player Touch input
+        foreach (Touch touch in Input.touches)
+        {
+            Vector3 newPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            newPosition.z = transform.position.z;
+            newPosition.x = newPosition.x + objectWidth * 2;
+            Move(newPosition);
+        }
     }
 
     private void FixedUpdate()
     {
         if(!isDead)
         {
-            Move();
+            // code
         }        
     }
 
-    void Move()
+    void Move(Vector2 movePosition)
     {
 
         // float xAxis = Input.GetAxis("Horizontal");
         // float yAxis = Input.GetAxis("Vertical");
 
-        float xAxis = Input.acceleration.x;
-        float yAxis = Input.acceleration.y;
+        // float xAxis = Input.acceleration.x;
+        // float yAxis = Input.acceleration.y;
 
-        Vector2 movement = new Vector2(xAxis, yAxis);
-        rb.velocity = movement * speed;
+        // Vector2 direction = new Vector2(xAxis, yAxis);
+
+        // rb.velocity = movePosition * speed;
         // rb.AddForce(movement * speed);
 
         // Keep player within screen boundaries
         // https://pressstart.vip/tutorials/2018/06/28/41/keep-object-in-bounds.html
-        Vector3 clampPosition = transform.position;
-        clampPosition.x = Mathf.Clamp(transform.position.x, screenBounds.x * -1 + objectWidth,  screenBounds.x - objectWidth);
-        clampPosition.y = Mathf.Clamp(transform.position.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
-        transform.position = clampPosition;
-    }    
+        // Vector3 clampPosition = transform.position;
+        // clampPosition.x = Mathf.Clamp(transform.position.x, screenBounds.x * -1 + objectWidth,  screenBounds.x - objectWidth);
+        // clampPosition.y = Mathf.Clamp(transform.position.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        // transform.position = clampPosition;
+
+        // transform.position = Vector3.Lerp(transform.position, movePosition, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, movePosition, speed * Time.deltaTime);
+    }
 
     void Die()
     {        
