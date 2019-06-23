@@ -50,7 +50,11 @@ public class Player : MonoBehaviour, Damageable
         {
             return;
         }
-      
+
+        #if UNITY_EDITOR
+            MoveByAxis(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        #endif
+
         // Get Player Touch input
         foreach (Touch touch in Input.touches)
         {
@@ -69,13 +73,26 @@ public class Player : MonoBehaviour, Damageable
         }        
     }
 
+    void MoveByAxis(float xAxis, float yAxis)
+    {        
+        Vector2 direction = new Vector2(xAxis, yAxis);
+
+        rb.velocity = direction * speed;        
+
+        // Keep player within screen boundaries
+        // https://pressstart.vip/tutorials/2018/06/28/41/keep-object-in-bounds.html
+        Vector3 clampPosition = transform.position;
+        clampPosition.x = Mathf.Clamp(transform.position.x, screenBounds.x * -1 + objectWidth,  screenBounds.x - objectWidth);
+        clampPosition.y = Mathf.Clamp(transform.position.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        transform.position = clampPosition;
+    }
+
     void Move(Vector2 movePosition)
     {
-
         // float xAxis = Input.GetAxis("Horizontal");
         // float yAxis = Input.GetAxis("Vertical");
 
-        // float xAxis = Input.acceleration.x;
+        // float xAxis = Input.acceleration.x; // for accelerometer input
         // float yAxis = Input.acceleration.y;
 
         // Vector2 direction = new Vector2(xAxis, yAxis);
