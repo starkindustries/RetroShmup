@@ -6,7 +6,7 @@ public class FlightController : MonoBehaviour
 {
     public GameObject ship;
 
-    private Drivable drivableShip;
+    private Drivable drivableShip;    
     private List<FlightInstruction> instructions;
 
     // Start is called before the first frame update
@@ -18,11 +18,14 @@ public class FlightController : MonoBehaviour
             Debug.LogError("ERROR: Drivable ship is null!");
         }
 
+        // Initialize Ship 
+        drivableShip.Initialize(position: new Vector2(0, 0), Quaternion.Euler(x: 0f, y: 0f, z: 90f));
+
         // flight plan
         instructions = new List<FlightInstruction>();
         instructions.Add(new FlightInstruction(FlightInstruction.Action.SetVelocity, 5f));
         instructions.Add(new FlightInstruction(FlightInstruction.Action.Wait, 3f));
-        instructions.Add(new FlightInstruction(FlightInstruction.Action.SetVelocity, 0f));
+        instructions.Add(new FlightInstruction(FlightInstruction.Action.SetVelocity, 0.5f));
         instructions.Add(new FlightInstruction(FlightInstruction.Action.Wait, 3f));
         instructions.Add(new FlightInstruction(FlightInstruction.Action.Rotate, 100f));
 

@@ -14,6 +14,12 @@ public class BlueShip : MonoBehaviour, Drivable
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void Initialize(Vector2 position, Quaternion rotation)
+    {
+        transform.position = position;
+        transform.rotation = rotation;
+    }
+
     public void SetVelocity(float velocity)
     {
         if(rb == null)
