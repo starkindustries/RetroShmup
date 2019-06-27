@@ -66,7 +66,7 @@ public class FlightPlan
                     ship.SetVelocity(velocity: i.floatParam);
                     break;
                 case FlightInstruction.Action.Shoot:
-                    ship.Shoot(repeat: i.boolParam, delayBetweenShots: i.floatParam);
+                    ship.Shoot(continuous: i.boolParam, fireRate: i.floatParam);
                     break;
                 case FlightInstruction.Action.Rotate:
                     ship.SetAngularVelocity(angularVelocity: i.floatParam);

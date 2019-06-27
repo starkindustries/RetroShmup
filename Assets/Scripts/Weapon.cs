@@ -16,46 +16,73 @@ public class Weapon : MonoBehaviour
     public bool burstMode; 
     public float continuousFireTime;
     public float cooldownTime;
-
     public bool aimAtPlayer;
+    private bool ceaseFire;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(burstMode)
-        {
-            StartCoroutine(BurstFire());
-        }
-        else
-        {
-            StartCoroutine(Fire());
-        }        
+        ceaseFire = false;
     }
-    
-    IEnumerator BurstFire()
+
+    // Public Functions
+    public void CeaseFire()
     {
-        while(true)
+        ceaseFire = true;
+    }
+
+    public void SingleShot()
+    {        
+        Instantiate(projectile, firePoint.position, firePoint.rotation);
+    }
+
+    public void SingleRoundBurst()
+    {        
+        StartCoroutine(SingleRoundBurstCoroutine());
+    }
+
+    public void ContinuousFire()
+    {
+        ceaseFire = false;
+        StartCoroutine(ContinuousFireCoroutine());
+    }
+
+    public void ContinuousBurstFire()
+    {
+        ceaseFire = false;
+        StartCoroutine(ContinuousBurstFireCoroutine());
+    }
+
+    // Private Coroutines
+    private IEnumerator SingleRoundBurstCoroutine()
+    {
+        // shoot for x seconds
+        for (float time = 0; time < continuousFireTime; time += 1 / fireRate)
         {
-            // shoot for x seconds
-            for(float time = 0; time < continuousFireTime; time += 1/ fireRate)
-            {                
-                if (aimAtPlayer)
-                {
-                    firePoint.right = GameManager.Instance.GetPlayerTransform().position - firePoint.position;
-                }
-                Instantiate(projectile, firePoint.position, firePoint.rotation);
-                yield return new WaitForSeconds(1 / fireRate);
+            if (aimAtPlayer)
+            {
+                firePoint.right = GameManager.Instance.GetPlayerTransform().position - firePoint.position;
             }
+            SingleShot();
+            yield return new WaitForSeconds(1 / fireRate);
+        }
+    }
+
+    private IEnumerator ContinuousBurstFireCoroutine()
+    {
+        while(!ceaseFire)
+        {
+            yield return StartCoroutine(SingleRoundBurstCoroutine());
             // cooldown for x seconds
             yield return new WaitForSeconds(cooldownTime);
         }
     }
 
-    IEnumerator Fire()
+    private IEnumerator ContinuousFireCoroutine()
     {
-        while(true)
+        while(!ceaseFire)
         {
-            Instantiate(projectile, firePoint.position, firePoint.rotation);
+            SingleShot();
             yield return new WaitForSeconds(1 / fireRate);
         }                
     }

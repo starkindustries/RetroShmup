@@ -7,5 +7,5 @@ public interface Drivable
     void Initialize(Vector2 position, Quaternion rotation);
     void SetVelocity(float velocity);
     void SetAngularVelocity(float angularVelocity);
-    void Shoot(bool repeat, float delayBetweenShots);
+    void Shoot(bool continuous, float fireRate);
 }

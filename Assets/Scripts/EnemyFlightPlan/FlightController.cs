@@ -24,7 +24,10 @@ public class FlightController : MonoBehaviour
         flightPlan.AddInstructionWait(3f);
         flightPlan.AddInstructionSetVelocity(0.5f);
         flightPlan.AddInstructionWait(3f);
-        flightPlan.AddInstructionSetAngularVelocity(100f);
+        flightPlan.AddInstructionSetAngularVelocity(-100f);
+        flightPlan.AddInstructionWait(1f);
+        flightPlan.AddInstructionSetAngularVelocity(0f);
+        flightPlan.AddInstructionShoot(repeat: false);
 
         // run flight plan!
         flightPlan.ExecuteFlightPlan(this);
