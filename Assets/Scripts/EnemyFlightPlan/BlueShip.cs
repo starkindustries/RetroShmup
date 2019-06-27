@@ -22,10 +22,6 @@ public class BlueShip : MonoBehaviour, Drivable
 
     public void SetVelocity(float velocity)
     {
-        if(rb == null)
-        {
-            Debug.LogError("ERROR: rigidbody is null!");
-        }
         rb.velocity = transform.up * velocity;
     }
 

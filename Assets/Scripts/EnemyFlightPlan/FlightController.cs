@@ -5,61 +5,34 @@ using UnityEngine;
 public class FlightController : MonoBehaviour
 {
     public GameObject ship;
-
-    private Drivable drivableShip;    
-    private List<FlightInstruction> instructions;
+    private FlightPlan flightPlan;
 
     // Start is called before the first frame update
     void Start()
     {
-        drivableShip = ship.GetComponent<Drivable>();
+        Drivable drivableShip = ship.GetComponent<Drivable>();
         if (drivableShip == null)
         {
             Debug.LogError("ERROR: Drivable ship is null!");
         }
 
         // Initialize Ship 
-        drivableShip.Initialize(position: new Vector2(0, 0), Quaternion.Euler(x: 0f, y: 0f, z: 90f));
+        flightPlan = new FlightPlan(drivableShip, position: new Vector2(0, 0), rotation: Quaternion.Euler(x: 0f, y: 0f, z: 90f));
 
         // flight plan
-        instructions = new List<FlightInstruction>();
-        instructions.Add(new FlightInstruction(FlightInstruction.Action.SetVelocity, 5f));
-        instructions.Add(new FlightInstruction(FlightInstruction.Action.Wait, 3f));
-        instructions.Add(new FlightInstruction(FlightInstruction.Action.SetVelocity, 0.5f));
-        instructions.Add(new FlightInstruction(FlightInstruction.Action.Wait, 3f));
-        instructions.Add(new FlightInstruction(FlightInstruction.Action.Rotate, 100f));
+        flightPlan.AddInstructionSetVelocity(5f);
+        flightPlan.AddInstructionWait(3f);
+        flightPlan.AddInstructionSetVelocity(0.5f);
+        flightPlan.AddInstructionWait(3f);
+        flightPlan.AddInstructionSetAngularVelocity(100f);
 
-        StartCoroutine(ExecuteFlightPlan());
+        // run flight plan!
+        flightPlan.ExecuteFlightPlan(this);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    private IEnumerator ExecuteFlightPlan()
-    {
-        Debug.Log("FLightPlan Execute function start");
-        foreach (FlightInstruction i in instructions)
-        {
-            Debug.Log("FLightPlan Execute function foreach");
-            switch (i.action)
-            {
-                case FlightInstruction.Action.Wait:
-                    yield return new WaitForSeconds(i.floatParam);
-                    break;
-                case FlightInstruction.Action.SetVelocity:
-                    drivableShip.SetVelocity(velocity: i.floatParam);
-                    break;
-                case FlightInstruction.Action.Shoot:
-                    drivableShip.Shoot(repeat: i.boolParam, delayBetweenShots: i.floatParam);
-                    break;
-                case FlightInstruction.Action.Rotate:
-                    drivableShip.SetAngularVelocity(angularVelocity: i.floatParam);
-                    break;
-            }
-        }
-        yield break;
-    }
+    }    
 }
