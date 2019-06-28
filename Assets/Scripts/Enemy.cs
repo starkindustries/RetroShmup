@@ -33,9 +33,6 @@ public class Enemy : MonoBehaviour, Damageable, Scorable, Drivable
         Health = health;
         Points = points;
         Scoreboard = FindObjectOfType<Scoreboard>();        
-       
-        // Flip the enemy
-        transform.Rotate(0f, 180f, 0f);        
     }
 
     // Update is called once per frame

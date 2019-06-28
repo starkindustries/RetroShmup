@@ -11,7 +11,7 @@ public class FlightController : MonoBehaviour
     void Start()
     {
         // Create a clone of the ship
-        GameObject newShip = Instantiate(ship, Vector3.zero, Quaternion.identity);
+        GameObject newShip = Instantiate(ship);
 
         Drivable drivableShip = newShip.GetComponent<Drivable>();
         if (drivableShip == null)
@@ -20,7 +20,7 @@ public class FlightController : MonoBehaviour
         }        
 
         // Initialize Ship 
-        flightPlan = new FlightPlan(drivableShip, position: new Vector2(12, -5), rotation: Quaternion.Euler(x: 0f, y: 0f, z: 0f));
+        flightPlan = new FlightPlan(drivableShip, position: new Vector2(12, -5), rotation: Quaternion.Euler(x: 0f, y: 180f, z: 0f));
 
         // flight plan
         flightPlan.AddInstructionSetVelocity(5f);
