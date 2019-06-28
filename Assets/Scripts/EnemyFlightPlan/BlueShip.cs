@@ -22,6 +22,11 @@ public class BlueShip : MonoBehaviour, Drivable
         transform.rotation = rotation;
     }
 
+    public bool IsDrivable()
+    {
+        return true;
+    }
+
     public void SetVelocity(float velocity)
     {
         rb.velocity = transform.up * velocity;

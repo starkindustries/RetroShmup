@@ -12,6 +12,7 @@ public class Player : MonoBehaviour, Damageable
     private Rigidbody2D rb;
     private GameManager gameManager;
     private Vector2 screenBounds;
+    private Weapon weapon;
     private float objectWidth;
     private float objectHeight;
     private bool isDead = false;
@@ -22,11 +23,18 @@ public class Player : MonoBehaviour, Damageable
     {
         Health = health;
         rb = GetComponent<Rigidbody2D>();
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();       
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         Debug.Log("Screen bounds: " + screenBounds.ToString());
         objectWidth  = GetComponent<SpriteRenderer>().bounds.extents.x; // extents = size of width / 2
         objectHeight = GetComponent<SpriteRenderer>().bounds.extents.y; // extents = size of height / 2        
+
+        // Initialize weapon
+        weapon = GetComponent<Weapon>();
+        if (weapon != null)
+        {
+            weapon.ContinuousFire();
+        }
     }
 
     // Note: As a general rule:

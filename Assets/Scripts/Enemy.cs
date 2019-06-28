@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Enemy : MonoBehaviour, Damageable, Scorable
+public class Enemy : MonoBehaviour, Damageable, Scorable, Drivable
 {
     public GameObject explosion;
     public GameObject pointsEffect;
@@ -15,26 +15,27 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     
     private bool isDead = false;
     private Rigidbody2D rb;
-    private int currentTargetIndex;
-    private Vector2[] flightPath;
-    private float minDistance = 1f;
+    private Weapon weapon;
 
-    #region Start & Update
+    #region Awake, Start & Update
+    private void Awake()
+    {
+        // Get the rigidbdy
+        rb = GetComponent<Rigidbody2D>();
+        
+        // Get weapon if available
+        weapon = GetComponent<Weapon>();
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
         Health = health;
         Points = points;
-        Scoreboard = FindObjectOfType<Scoreboard>();
-        rb = GetComponent<Rigidbody2D>();
-
-        // Set starting position
-        transform.position = flightPath[0];
-        
-        currentTargetIndex = 1;
-
+        Scoreboard = FindObjectOfType<Scoreboard>();        
+       
         // Flip the enemy
-        transform.Rotate(0f, 180f, 0f);
+        transform.Rotate(0f, 180f, 0f);        
     }
 
     // Update is called once per frame
@@ -46,41 +47,9 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     // For Physics!
     private void FixedUpdate()
     {
-        if(!isDead)
-        {
-            TraverseFlightPath();
-        }
+
     }
     #endregion
-
-    public void SetFlightPath(Vector2[] path)
-    {
-        flightPath = path;
-    }
-
-    public void TraverseFlightPath()
-    {
-        float distance = Vector2.Distance(flightPath[currentTargetIndex], rb.position);
-        if ((distance < minDistance))
-        {            
-            if (currentTargetIndex < flightPath.Length - 1)
-            {
-                // if current index is less than the last index then increment
-                currentTargetIndex++;
-            }
-            else
-            {
-                // else if the current index is on the last index then journey complete!
-                Destroy(this.gameObject);
-            }
-        }
-
-        Vector2 direction = flightPath[currentTargetIndex] - rb.position;
-        direction.Normalize();
-        float rotateAmount = Vector3.Cross(direction, transform.right).z;
-        rb.angularVelocity = -rotateAmount * rotationSpeed; // float        
-        rb.velocity = transform.right * speed; // vector2
-    }
 
     private void Die()
     {
@@ -128,6 +97,58 @@ public class Enemy : MonoBehaviour, Damageable, Scorable
     {
         Scoreboard.AddPoints(Points);
         Instantiate(pointsEffect, transform.position, Quaternion.identity);
+    }
+    #endregion
+
+    #region Drivable Interface
+    // ************************
+    // Drivable Interface
+    // ************************
+    public void Initialize(Vector2 position, Quaternion rotation)
+    {
+        transform.position = position;
+        transform.rotation = rotation;
+    }
+
+    public bool IsDrivable()
+    {
+        return !isDead;
+    }
+
+    public void SetVelocity(float velocity)
+    {
+        if (rb == null)
+        {
+            Debug.LogWarning("Warning! Rigidbody is null in Enemy");
+            rb = GetComponent<Rigidbody2D>();
+        }
+        rb.velocity = transform.right * velocity;
+    }
+
+    public void SetAngularVelocity(float angularVelocity)
+    {
+        rb.angularVelocity = angularVelocity;
+    }
+
+    public void Shoot(bool continuous, float fireRate)
+    {
+        Debug.Log("Shoot!");
+        // Check if weapon is null
+        if (weapon == null)
+        {
+            return;
+        }
+
+        // If continuous is true, begin continuous fire
+        if (continuous)
+        {
+            weapon.fireRate = fireRate;
+            weapon.ContinuousFire();
+        }
+        else
+        {
+            weapon.SingleShot();
+        }
     }
     #endregion
 }

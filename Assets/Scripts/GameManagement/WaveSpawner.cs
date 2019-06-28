@@ -45,7 +45,7 @@ public class WaveSpawner : MonoBehaviour
                 Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
 
                 Vector2[] path = FlightPath.GetFlightPath(currentWave.flightPath, currentWave.flightParam);
-                enemyComponent.SetFlightPath(path);
+                // enemyComponent.SetFlightPath(path);
                 yield return new WaitForSeconds(waves[i].delayBetweenEnemies);
             }
             yield return new WaitForSeconds(currentWave.delayAfterWave);

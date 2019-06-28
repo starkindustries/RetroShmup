@@ -10,14 +10,17 @@ public class FlightController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Drivable drivableShip = ship.GetComponent<Drivable>();
+        // Create a clone of the ship
+        GameObject newShip = Instantiate(ship, Vector3.zero, Quaternion.identity);
+
+        Drivable drivableShip = newShip.GetComponent<Drivable>();
         if (drivableShip == null)
         {
             Debug.LogError("ERROR: Drivable ship is null!");
-        }
+        }        
 
         // Initialize Ship 
-        flightPlan = new FlightPlan(drivableShip, position: new Vector2(0, 0), rotation: Quaternion.Euler(x: 0f, y: 0f, z: 90f));
+        flightPlan = new FlightPlan(drivableShip, position: new Vector2(12, -5), rotation: Quaternion.Euler(x: 0f, y: 0f, z: 0f));
 
         // flight plan
         flightPlan.AddInstructionSetVelocity(5f);

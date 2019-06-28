@@ -56,6 +56,10 @@ public class FlightPlan
         Debug.Log("FlightPlan Execute function start!!");
         foreach (FlightInstruction i in instructions)
         {
+            if(!ship.IsDrivable())
+            {
+                break;
+            }
             Debug.Log("FlightPlan Execute function foreach");
             switch (i.action)
             {
