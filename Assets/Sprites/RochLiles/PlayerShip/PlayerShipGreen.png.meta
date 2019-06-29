@@ -20,6 +20,15 @@ TextureImporter:
   - first:
       213: -3031131671914013975
     second: PlayerShipDown
+  - first:
+      213: 4053488862181074008
+    second: PlayerShipGreenIdle
+  - first:
+      213: 5480309758212175100
+    second: PlayerShipGreenUp
+  - first:
+      213: 806545777758049343
+    second: PlayerShipGreenDown
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -76,7 +85,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -87,8 +96,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -99,8 +107,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -111,8 +118,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,8 +129,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -135,69 +140,68 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerShipIdle
+      name: PlayerShipGreenIdle
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
+        y: 0
         width: 34
-        height: 16
-      alignment: 9
+        height: 18
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d3b7cbd7bb72f34ab2f67d495986849
-      internalID: -5934761212996482088
+      spriteID: 84ed1b046efca574db9b4db40e93e673
+      internalID: 4053488862181074008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerShipUp
+      name: PlayerShipGreenUp
       rect:
         serializedVersion: 2
         x: 34
-        y: 1
+        y: 0
         width: 34
-        height: 16
-      alignment: 9
+        height: 18
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c54e2644e7d6a04ca386d53df51be7c
-      internalID: -3447661468043833857
+      spriteID: ce23b5ed758c937418ae9fb80be8cc83
+      internalID: 5480309758212175100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerShipDown
+      name: PlayerShipGreenDown
       rect:
         serializedVersion: 2
         x: 68
-        y: 1
+        y: 0
         width: 34
-        height: 16
-      alignment: 9
+        height: 18
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7de9f572b570fc34d88b64106fc3f5fa
-      internalID: -3031131671914013975
+      spriteID: 01a6cba98bce85f4cad4eb1d0ff03643
+      internalID: 806545777758049343
       vertices: []
       indices: 
       edges: []
