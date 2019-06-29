@@ -8,10 +8,20 @@ public class FlightPlan
     private List<FlightInstruction> instructions;
 
     // Constructors
+    public FlightPlan()
+    {
+        instructions = new List<FlightInstruction>();
+    }
+
     public FlightPlan(Drivable drivable)
     {
         ship = drivable;
         instructions = new List<FlightInstruction>();
+    }
+
+    public FlightPlan(List<FlightInstruction> newInstructions)
+    {
+        instructions = newInstructions;
     }
 
     public FlightPlan(Drivable drivable, Vector2 position, Quaternion rotation)
@@ -19,6 +29,18 @@ public class FlightPlan
         ship = drivable;
         ship.Initialize(position: position, rotation: rotation);
         instructions = new List<FlightInstruction>();
+    }
+
+    // Getters & Setters
+    public void SetShip(Drivable drivableShip, Vector2 position, Quaternion rotation)
+    {
+        ship = drivableShip;
+        ship.Initialize(position: position, rotation: rotation);
+    }
+
+    public List<FlightInstruction> GetInstructions()
+    {
+        return instructions;
     }
 
     // Add Instruction: Set Velocity
@@ -53,6 +75,14 @@ public class FlightPlan
 
     private IEnumerator ExecuteFlightPlanCoroutine()
     {
+        // Check if ship is null
+        if (ship == null)
+        {
+            Debug.LogError("FlightPlan Error: ship is null.");
+            yield break;
+        }
+
+        // Execute the flight plan!
         Debug.Log("FlightPlan Execute function start!!");
         foreach (FlightInstruction i in instructions)
         {
