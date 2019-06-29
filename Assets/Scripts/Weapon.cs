@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
     public float cooldownTime;
     public bool aimAtPlayer;
     private bool ceaseFire;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,11 @@ public class Weapon : MonoBehaviour
     }
 
     // Public Functions
+    public void SetAnimator(Animator newAnimator)
+    {
+        animator = newAnimator;
+    }
+
     public void CeaseFire()
     {
         ceaseFire = true;
@@ -34,6 +40,10 @@ public class Weapon : MonoBehaviour
     public void SingleShot()
     {        
         Instantiate(projectile, firePoint.position, firePoint.rotation);
+        if(animator != null)
+        {
+            animator.SetTrigger("Fire");
+        }        
     }
 
     public void SingleRoundBurst()
