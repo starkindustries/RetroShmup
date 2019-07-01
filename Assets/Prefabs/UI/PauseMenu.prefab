@@ -162,7 +162,7 @@ PrefabInstance:
     - target: {fileID: 8638955106083276768, guid: 8cb8c3b5895e5194da969278fdad585f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8638955106083276768, guid: 8cb8c3b5895e5194da969278fdad585f,
         type: 3}
@@ -297,7 +297,7 @@ PrefabInstance:
     - target: {fileID: 8638955106083276768, guid: 8cb8c3b5895e5194da969278fdad585f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8638955106083276768, guid: 8cb8c3b5895e5194da969278fdad585f,
         type: 3}
@@ -513,6 +513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132086938326710650, guid: f76fe45c540e85547999d663c59d0f06,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f76fe45c540e85547999d663c59d0f06, type: 3}

@@ -18,6 +18,9 @@ public class Player : MonoBehaviour, Damageable
     private bool isDead = false;
     private bool isDying = false; // so that we don't call death animation twice
 
+    // Accelerometer variables
+    private Vector3 initialTilt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,9 @@ public class Player : MonoBehaviour, Damageable
         {
             weapon.ContinuousFire();
         }
+
+        // Initialize Player Movement by current phone accelerometer tilt
+        initialTilt = Input.acceleration;
     }
 
     // Note: As a general rule:
@@ -61,16 +67,17 @@ public class Player : MonoBehaviour, Damageable
 
         #if UNITY_EDITOR
             MoveByAxis(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        #endif
+        #else
+            // Get Player Touch input
+            /********
+            foreach (Touch touch in Input.touches)
+            {
+                MoveByTouch(touch);
+            }*******/
 
-        // Get Player Touch input
-        foreach (Touch touch in Input.touches)
-        {
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            newPosition.z = transform.position.z;
-            newPosition.x = newPosition.x + objectWidth * 2;
-            Move(newPosition);
-        }
+            // Use Accelerometer Input
+            MoveByAccelerometer(Input.acceleration);
+        #endif        
     }
 
     private void FixedUpdate()
@@ -95,28 +102,27 @@ public class Player : MonoBehaviour, Damageable
         transform.position = clampPosition;
     }
 
-    void Move(Vector2 movePosition)
+    void MoveByTouch(Touch touch)
     {
-        // float xAxis = Input.GetAxis("Horizontal");
-        // float yAxis = Input.GetAxis("Vertical");
+        Vector3 newPosition = Camera.main.ScreenToWorldPoint(touch.position);
+        newPosition.z = transform.position.z;
+        newPosition.x = newPosition.x + objectWidth * 2;
+        transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+    }
 
-        // float xAxis = Input.acceleration.x; // for accelerometer input
-        // float yAxis = Input.acceleration.y;
-
-        // Vector2 direction = new Vector2(xAxis, yAxis);
-
-        // rb.velocity = movePosition * speed;
-        // rb.AddForce(movement * speed);
+    void MoveByAccelerometer(Vector3 acceleration)
+    {
+        // Accelerometer Input        
+        // Vector2 direction = new Vector2(acceleration.x - initialTilt.x, acceleration.y - initialTilt.y);
+        // rb.velocity = direction * speed;
+        transform.Translate(x: acceleration.x - initialTilt.x, acceleration.y - initialTilt.y, 0);
 
         // Keep player within screen boundaries
         // https://pressstart.vip/tutorials/2018/06/28/41/keep-object-in-bounds.html
-        // Vector3 clampPosition = transform.position;
-        // clampPosition.x = Mathf.Clamp(transform.position.x, screenBounds.x * -1 + objectWidth,  screenBounds.x - objectWidth);
-        // clampPosition.y = Mathf.Clamp(transform.position.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
-        // transform.position = clampPosition;
-
-        // transform.position = Vector3.Lerp(transform.position, movePosition, speed * Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, movePosition, speed * Time.deltaTime);
+        Vector3 clampPosition = transform.position;
+        clampPosition.x = Mathf.Clamp(transform.position.x, screenBounds.x * -1 + objectWidth,  screenBounds.x - objectWidth);
+        clampPosition.y = Mathf.Clamp(transform.position.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        transform.position = clampPosition;        
     }
 
     void Die()

@@ -48,7 +48,7 @@ public class FlightController : MonoBehaviour
             FlightPlan plan = new FlightPlan(newInstructions: flightPlan.GetInstructions());
 
             // Set the ship and execute
-            plan.SetShip(drivableShip, position: new Vector2(12, -5), rotation: Quaternion.Euler(x: 0f, y: 180f, z: 0f));
+            plan.SetShip(drivableShip, position: new Vector2(12, -3), rotation: Quaternion.Euler(x: 0f, y: 180f, z: 0f));
             plan.ExecuteFlightPlan(this);
 
             // Delay between each enemy
@@ -68,7 +68,7 @@ public class FlightController : MonoBehaviour
             FlightPlan plan = new FlightPlan(newInstructions: flightPlan.GetInstructions());
 
             // Set the ship and execute
-            plan.SetShip(drivableShip, position: new Vector2(12 + i*2, -5), rotation: Quaternion.Euler(x: 0f, y: 180f, z: 0f));
+            plan.SetShip(drivableShip, position: new Vector2(12 + i*2, -3), rotation: Quaternion.Euler(x: 0f, y: 180f, z: 0f));
             plan.ExecuteFlightPlan(this);            
         }
     }
