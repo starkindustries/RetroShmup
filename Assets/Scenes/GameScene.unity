@@ -1606,7 +1606,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2020708745}
-  - {fileID: 690322619}
   - {fileID: 628449962}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1875,122 +1874,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 530642434}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &558908389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 558908393}
-  - component: {fileID: 558908392}
-  - component: {fileID: 558908391}
-  - component: {fileID: 558908390}
-  m_Layer: 0
-  m_Name: HomingMissile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &558908390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558908389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f84136a68cd9441871720a0dfdff57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  rotationSpeed: 200
---- !u!50 &558908391
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558908389}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!212 &558908392
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558908389}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1505303821
-  m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d4b603dfacb6ba74fb8f17b804e650b1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &558908393
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558908389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.22, y: 2.98, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605312807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,7 +2053,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 503926962}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &628449963
 MonoBehaviour:
@@ -2403,226 +2286,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1801505572}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &690322618
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 690322619}
-  - component: {fileID: 690322620}
-  m_Layer: 0
-  m_Name: WaveSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &690322619
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690322618}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 503926962}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &690322620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690322618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab0de7c190a1342489e6282115a58303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waves:
-  - name: Wave1 MiniStraightAcross
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: 3
-    enemyCount: 8
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 2
-  - name: Wave2 MiniStraightAcross
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: -3
-    enemyCount: 8
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 2
-  - name: Wave3 LargeStraightAcross
-    enemy: {fileID: 6248222383674694245, guid: af85be768876ead499857c64a4f0867c, type: 3}
-    flightPath: 0
-    flightParam: 3
-    enemyCount: 1
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0
-    delayAfterWave: 2
-  - name: Wave4 LargeStraightAcross
-    enemy: {fileID: 6248222383674694245, guid: af85be768876ead499857c64a4f0867c, type: 3}
-    flightPath: 0
-    flightParam: -3
-    enemyCount: 1
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0
-    delayAfterWave: 2
-  - name: Wave5 MiniLoopBelow
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 1
-    flightParam: 0
-    enemyCount: 6
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 3
-  - name: Wave6 MiniLoopAbove
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 2
-    flightParam: 0
-    enemyCount: 6
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 3
-  - name: Wave6 LargeRound1
-    enemy: {fileID: 6248222383674694245, guid: af85be768876ead499857c64a4f0867c, type: 3}
-    flightPath: 0
-    flightParam: 1
-    enemyCount: 1
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0
-    delayAfterWave: 2
-  - name: Wave7 LargeRound2
-    enemy: {fileID: 6248222383674694245, guid: af85be768876ead499857c64a4f0867c, type: 3}
-    flightPath: 0
-    flightParam: -1
-    enemyCount: 1
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0
-    delayAfterWave: 2
-  - name: Wave8 MiniStraightRound1
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: -5
-    enemyCount: 8
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 4
-  - name: Wave9 MiniStraightRound2
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: 5
-    enemyCount: 8
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 5
-  - name: Wave10 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: 5
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 1
-  - name: Wave11 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: 4
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave12 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: 3
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave13 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: 2
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave14 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: 1
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave15 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: 0
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave16 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: -1
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave17 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: -2
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave18 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: -3
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave19 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: -4
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave20 MiniPairs
-    enemy: {fileID: 8435219728302527081, guid: b70a96a09fcca9e48bfbfb2bbb49ea38, type: 3}
-    flightPath: 0
-    flightParam: -5
-    enemyCount: 2
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
-  - name: Wave21 LargeAutoFire
-    enemy: {fileID: 8779701992526320927, guid: 02c73cd32689b8044b2750e9fcb438ee, type: 3}
-    flightPath: 0
-    flightParam: 0
-    enemyCount: 1
-    delayBeforeWave: 0
-    delayBetweenEnemies: 0.5
-    delayAfterWave: 0.5
 --- !u!1001 &724585278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3116,7 +2779,7 @@ RectTransform:
   - {fileID: 418469902}
   - {fileID: 1934752086}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4870,7 +4533,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1380091369
 GameObject:
@@ -4970,7 +4633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  speed: 15
+  speed: 10
   explosionRing: {fileID: 3213717130424831184, guid: 2e7e231fda8b1364195ff0dee94ca504,
     type: 3}
   explosionNuclear: {fileID: 5601820802132687252, guid: 87c7d977319a161489acb5f4783258b2,
@@ -5530,6 +5193,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1603859993}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1660464717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660464718}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660464718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660464717}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1756513834}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661923143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5789,6 +5483,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1452731189}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1756513833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1756513834}
+  m_Layer: 0
+  m_Name: Wave1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1756513834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756513833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.6, y: -6.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1660464718}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1785388622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6744,7 +6468,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2079717405
 PrefabInstance:
