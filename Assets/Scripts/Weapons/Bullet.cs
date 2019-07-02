@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Hit: " + other.name);
+        Debug.Log("Bullet Hit: " + other.name);
         Damageable objectHit = other.GetComponent<Damageable>();
         if(objectHit != null)
         {

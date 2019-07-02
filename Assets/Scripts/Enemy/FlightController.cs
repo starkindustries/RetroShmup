@@ -2,80 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlightController : MonoBehaviour
+public class FlightController
 {
-    public GameObject ship;
+    private GameObject ship;
+    private Vector2 position;
+    private Quaternion rotation;
     private FlightPlan flightPlan;
 
-    // Start is called before the first frame update
-    void Start()
+    // Must initialize flight controller before it can be useful
+    public FlightController(GameObject newShip, Vector2 newPosition, Quaternion newRotation, FlightPlan newPlan)
     {
-        // Initialize FlightPlan
-        flightPlan = new FlightPlan();
-
-        // Add instructions
-        flightPlan.AddInstructionSetVelocity(5f);
-        flightPlan.AddInstructionWait(3f);
-        flightPlan.AddInstructionSetVelocity(1f);
-        flightPlan.AddInstructionWait(3f);
-        flightPlan.AddInstructionSetAngularVelocity(-100f);
-        flightPlan.AddInstructionWait(0.8f);
-        flightPlan.AddInstructionSetAngularVelocity(0f);
-        flightPlan.AddInstructionWait(2f);
-        flightPlan.AddInstructionSetVelocity(5f);
-        flightPlan.AddInstructionShoot(repeat: false);
-
-        // Unleash hell
-        StartCoroutine(SpawnEnemies());
+        ship = newShip;
+        position = newPosition;
+        rotation = newRotation;
+        flightPlan = newPlan;
     }
 
-    private IEnumerator SpawnEnemies()
+    // This spawns all clones **at the same location** but separated by time
+    public void CloneSpawnEnemyWavesSeparatedByTime(MonoBehaviour gameObject, int cloneCount, float delay)
     {
-        yield return StartCoroutine(SpawnEnemyWavesSeparatedByTime());
-        yield return new WaitForSeconds(2.0f);
-        SpawnEnemyWavesSeparatedByDistance();
-        yield break;
+        gameObject.StartCoroutine(CloneSpawnEnemyWavesSeparatedByTimeHelper(gameObject, cloneCount, delay));
     }
 
-    private IEnumerator SpawnEnemyWavesSeparatedByTime()
+    public IEnumerator CloneSpawnEnemyWavesSeparatedByTimeHelper(MonoBehaviour gameObject, int cloneCount, float delay)
     {
-        for (int i=0; i < 10; i++)
+        for (int i = 0; i < cloneCount; i++)
         {
             // Create a clone of the ship
-            Drivable drivableShip = Instantiate(ship).GetComponent<Drivable>();
+            Drivable drivableShip = MonoBehaviour.Instantiate(ship).GetComponent<Drivable>();
 
             // Create a clone of the flight plan
             FlightPlan plan = new FlightPlan(newInstructions: flightPlan.GetInstructions());
 
             // Set the ship and execute
-            plan.SetShip(drivableShip, position: new Vector2(12, -3), rotation: Quaternion.Euler(x: 0f, y: 180f, z: 0f));
-            plan.ExecuteFlightPlan(this);
+            plan.SetShip(drivableShip, position: position, rotation: rotation);
+            plan.ExecuteFlightPlan(gameObject);
 
             // Delay between each enemy
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(delay);
         }
         yield break;
     }
 
-    private void SpawnEnemyWavesSeparatedByDistance()
+    // This spawns all clones **at the same time** but separated by the distance vector
+    public void CloneSpawnEnemyWavesSeparatedByDistance(MonoBehaviour gameObject, int cloneCount, Vector2 distance)
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < cloneCount; i++)
         {
             // Create a clone of the ship
-            Drivable drivableShip = Instantiate(ship).GetComponent<Drivable>();
+            Drivable drivableShip = MonoBehaviour.Instantiate(ship).GetComponent<Drivable>();
 
             // Create a clone of the flight plan
             FlightPlan plan = new FlightPlan(newInstructions: flightPlan.GetInstructions());
 
-            // Set the ship and execute
-            plan.SetShip(drivableShip, position: new Vector2(12 + i*2, -3), rotation: Quaternion.Euler(x: 0f, y: 180f, z: 0f));
-            plan.ExecuteFlightPlan(this);            
+            // Set the ship and execute                        
+            plan.SetShip(drivableShip, position: position + i * distance, rotation: rotation);
+            plan.ExecuteFlightPlan(gameObject);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }    
 }

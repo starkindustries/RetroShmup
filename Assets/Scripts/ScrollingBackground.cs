@@ -17,7 +17,6 @@ public class ScrollingBackground : MonoBehaviour
         xBoundary = screenBounds.x;
 
         backgroundWidth = GetComponent<SpriteRenderer>().size.x;
-        Debug.Log("width: " + backgroundWidth);
         
         // Set scroll speed velocity
         GetComponent<Rigidbody2D>().velocity = new Vector2(-scrollSpeed, 0);
@@ -29,7 +28,6 @@ public class ScrollingBackground : MonoBehaviour
         float offscreenPosition = xBoundary + backgroundWidth / 2;
         if (transform.position.x < offscreenPosition * -1)
         {
-            Debug.Log("reposition");
             RepositionBackground();
         }        
     }
