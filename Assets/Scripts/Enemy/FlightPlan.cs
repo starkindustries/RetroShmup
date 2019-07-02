@@ -67,6 +67,13 @@ public class FlightPlan
         instructions.Add(new FlightInstruction(FlightInstruction.Action.Shoot, delayBetweenShots, repeat));
     }
 
+    // Add Instruction Accelerate Forward
+    // The intent for this function is to allow the enemy to update its forward movement within its update function
+    public void AddInstructionAccelerateForward(float timeInSeconds)
+    {
+        instructions.Add(new FlightInstruction(FlightInstruction.Action.AccelerateForward, timeInSeconds));
+    }
+
     // Execute Flight Plan: start the coroutine
     public void ExecuteFlightPlan(MonoBehaviour gameObject)
     {        
@@ -104,6 +111,9 @@ public class FlightPlan
                     break;
                 case FlightInstruction.Action.Rotate:
                     ship.SetAngularVelocity(angularVelocity: i.floatParam);
+                    break;
+                case FlightInstruction.Action.AccelerateForward:
+                    ship.AccelerateForward(timeInSeconds: i.floatParam);
                     break;
             }
         }

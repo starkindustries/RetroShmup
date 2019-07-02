@@ -57,4 +57,9 @@ public class BlueShip : MonoBehaviour, Drivable
             weapon.SingleShot();
         }
     }
+
+    public void AccelerateForward(float timeInSeconds)
+    {
+        Debug.LogWarning("BlueShip AccelerateForward: Implement this function");
+    }
 }

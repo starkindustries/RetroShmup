@@ -21,12 +21,11 @@ public class EnemyWave : MonoBehaviour
         flightPlan = new FlightPlan();
 
         // Add instructions
-        flightPlan.AddInstructionSetVelocity(5f);
+        flightPlan.AddInstructionSetVelocity(5f);        
         flightPlan.AddInstructionWait(3f);
-        flightPlan.AddInstructionSetVelocity(1f);
-        flightPlan.AddInstructionWait(3f);
-        flightPlan.AddInstructionSetAngularVelocity(-100f);
-        flightPlan.AddInstructionWait(0.8f);
+        flightPlan.AddInstructionSetAngularVelocity(-180f);
+        flightPlan.AddInstructionAccelerateForward(2.1f);
+        flightPlan.AddInstructionWait(2.1f);
         flightPlan.AddInstructionSetAngularVelocity(0f);
         flightPlan.AddInstructionWait(2f);
         flightPlan.AddInstructionSetVelocity(5f);

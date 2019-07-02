@@ -11,7 +11,8 @@ public class FlightInstruction
         boolParam = newBool;
     }
 
-    public enum Action { Wait, SetVelocity, Shoot, Rotate }
+    // These actions (other than Wait) coorespond to the Drivable Interface methods.
+    public enum Action { Wait, SetVelocity, Shoot, Rotate, AccelerateForward }
     public Action action;
     public float floatParam;
     public bool boolParam;

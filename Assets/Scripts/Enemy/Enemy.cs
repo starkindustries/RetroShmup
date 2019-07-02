@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, Damageable, Scorable, Drivable
     private bool isDead = false;
     private Rigidbody2D rb;
     private Weapon weapon;
+    private float timeToAccelerate = 0;
 
     #region Awake, Start & Update
     private void Awake()
@@ -44,7 +45,11 @@ public class Enemy : MonoBehaviour, Damageable, Scorable, Drivable
     // For Physics!
     private void FixedUpdate()
     {
-
+        if (timeToAccelerate > 0)
+        {
+            rb.velocity = transform.right * speed;
+            timeToAccelerate -= Time.deltaTime;
+        }
     }
     #endregion
 
@@ -119,6 +124,8 @@ public class Enemy : MonoBehaviour, Damageable, Scorable, Drivable
             Debug.LogWarning("Warning! Rigidbody is null in Enemy");
             rb = GetComponent<Rigidbody2D>();
         }
+        // Update the local speed variable
+        speed = velocity;
         rb.velocity = transform.right * velocity;
     }
 
@@ -146,6 +153,11 @@ public class Enemy : MonoBehaviour, Damageable, Scorable, Drivable
         {
             weapon.SingleShot();
         }
+    }
+
+    public void AccelerateForward(float timeInSeconds)
+    {
+        timeToAccelerate = timeInSeconds;
     }
     #endregion
 }

@@ -10,5 +10,6 @@ public interface Drivable
 
     void SetVelocity(float velocity);
     void SetAngularVelocity(float angularVelocity);
-    void Shoot(bool continuous, float fireRate);    
+    void Shoot(bool continuous, float fireRate);
+    void AccelerateForward(float timeInSeconds);
 }
