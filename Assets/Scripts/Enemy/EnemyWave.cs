@@ -2,37 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWave : MonoBehaviour
-{
-    
+[RequireComponent(typeof(BoxCollider2D))]
+public class EnemyWave : MonoBehaviour, Activatable
+{    
     public GameObject ship;
-    
-    private Transform spawnPoint;
+    public int enemyCount;
+    public Vector2 separationDistance;
+    public float waveDelay;
+    public List<FlightInstruction> instructions;
+
     private FlightPlan flightPlan;
     private FlightController flightController;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Activate()
     {
-        // Get transform
-        spawnPoint = GetComponent<Transform>();
+        StartCoroutine(StartWave());
+    }
 
-        // Initialize FlightPlan
-        flightPlan = new FlightPlan();
-
-        // Add instructions
-        flightPlan.AddInstructionSetVelocity(5f);        
-        flightPlan.AddInstructionWait(3f);
-        flightPlan.AddInstructionSetAngularVelocity(-180f);
-        flightPlan.AddInstructionAccelerateForward(2.1f);
-        flightPlan.AddInstructionWait(2.1f);
-        flightPlan.AddInstructionSetAngularVelocity(0f);
-        flightPlan.AddInstructionWait(2f);
-        flightPlan.AddInstructionSetVelocity(5f);
-        flightPlan.AddInstructionShoot(repeat: false);
-
-        flightController = new FlightController(ship, spawnPoint.position, Quaternion.Euler(0f, 180f, 0f), flightPlan);
-
-        flightController.CloneSpawnEnemyWavesSeparatedByDistance(this, 10, new Vector2(2, 1));
+    private IEnumerator StartWave()
+    {
+        yield return new WaitForSeconds(waveDelay);
+        flightPlan = new FlightPlan(instructions);
+        flightController = new FlightController(ship, transform.position, Quaternion.Euler(transform.rotation.eulerAngles), flightPlan);
+        flightController.CloneSpawnEnemyWavesSeparatedByDistance(this, enemyCount, separationDistance);
     }
 }

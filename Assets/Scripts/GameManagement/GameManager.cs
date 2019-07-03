@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private bool gameIsPaused = false;
     private bool gameIsOver = false;
 
-    #region Singleton Patter
+    #region Singleton Pattern
     //*****************
     // Singleton pattern
     // https://gamedev.stackexchange.com/a/116010/123894

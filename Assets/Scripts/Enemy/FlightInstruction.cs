@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class FlightInstruction
 {
     public FlightInstruction(Action newAction, float newFloat = 0f, bool newBool = false)
