@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : MonoBehaviour, Activatable
 {
     private Weapon weapon;
     private Animator animator;
@@ -11,20 +11,15 @@ public class Turret : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        weapon = GetComponent<Weapon>();        
+    }
 
-        weapon = GetComponent<Weapon>();
+    public void Activate()
+    {
         weapon.SetAnimator(animator);
         if (weapon != null)
         {
             weapon.ContinuousFire();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }
