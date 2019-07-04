@@ -19,7 +19,7 @@ public class Player : MonoBehaviour, Damageable
     private bool isDying = false; // so that we don't call death animation twice
 
     // Accelerometer variables
-    private Vector3 initialTilt;
+    private Quaternion initialTilt;    
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +37,12 @@ public class Player : MonoBehaviour, Damageable
         if (weapon != null)
         {
             weapon.ContinuousFire();
-        }
+        }                
 
-        // Initialize Player Movement by current phone accelerometer tilt
-        initialTilt = Input.acceleration;
+        if (GyroController.Instance.IsEnabled())
+        {
+            initialTilt = GyroController.Instance.GetAttitude().Value;
+        }
     }
 
     // Note: As a general rule:
@@ -67,17 +69,19 @@ public class Player : MonoBehaviour, Damageable
 
         #if UNITY_EDITOR
             MoveByAxis(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        #else
-            // Get Player Touch input
-            /********
-            foreach (Touch touch in Input.touches)
-            {
-                MoveByTouch(touch);
-            }*******/
+        #endif
+            
+        // Get Player Touch input
+        /*
+        foreach (Touch touch in Input.touches)
+        {
+            MoveByTouch(touch);
+        }*/
 
-            // Use Accelerometer Input
-            MoveByAccelerometer(Input.acceleration);
-        #endif        
+        if (GyroController.Instance.IsEnabled())
+        {
+            MoveByGyro(GyroController.Instance.GetAttitude().Value);
+        }
     }
 
     private void FixedUpdate()
@@ -110,6 +114,19 @@ public class Player : MonoBehaviour, Damageable
         transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
     }
 
+    void MoveByGyro(Quaternion orientation)
+    {
+        transform.Translate(x: orientation.x - initialTilt.x, orientation.y - initialTilt.y, 0);
+
+        // Keep player within screen boundaries
+        // https://pressstart.vip/tutorials/2018/06/28/41/keep-object-in-bounds.html
+        Vector3 clampPosition = transform.position;
+        clampPosition.x = Mathf.Clamp(transform.position.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
+        clampPosition.y = Mathf.Clamp(transform.position.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        transform.position = clampPosition;
+    }
+
+    /*
     void MoveByAccelerometer(Vector3 acceleration)
     {
         // Accelerometer Input        
@@ -122,8 +139,8 @@ public class Player : MonoBehaviour, Damageable
         Vector3 clampPosition = transform.position;
         clampPosition.x = Mathf.Clamp(transform.position.x, screenBounds.x * -1 + objectWidth,  screenBounds.x - objectWidth);
         clampPosition.y = Mathf.Clamp(transform.position.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
-        transform.position = clampPosition;        
-    }
+        transform.position = clampPosition;
+    }*/
 
     void Die()
     {        
@@ -143,10 +160,12 @@ public class Player : MonoBehaviour, Damageable
             Instantiate(explosionRing, transform.position, transform.rotation);
             yield return new WaitForSeconds(0.1f);
         }
-        
+
+        // Disable player's gravity
+        rb.gravityScale = 0f;
+
         // Disable player sprite
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-        sprite.enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;        
         
         // Release the nuclear explosion
         Vector2 explodeLocation = new Vector2(transform.position.x, screenBounds.y * -1);
@@ -154,6 +173,7 @@ public class Player : MonoBehaviour, Damageable
         yield return new WaitForSeconds(0.75f);
 
         // Call game over
+        Debug.Log("GAMEOVER checkpoint");
         GameManager.Instance.GameOver();
     }
 

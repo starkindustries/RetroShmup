@@ -7,19 +7,26 @@ public class DebugPanel : MonoBehaviour
 {
     public TextMeshProUGUI debugText;
 
-    private Vector3 initialTilt;
+    private Quaternion initialTilt;
 
     private void Start()
     {
-        initialTilt = Input.acceleration;
+        if (GyroController.Instance.IsEnabled())
+        {
+            initialTilt = GyroController.Instance.GetAttitude().Value;
+        }        
     }
 
     // Update is called once per frame
     void Update()
-    {        
-        debugText.text  = "  accel: (" + Format(Input.acceleration.x) + ", " + Format(Input.acceleration.y) + ", " + Format(Input.acceleration.z) + ")\n";
-        debugText.text += "initial: (" + Format(initialTilt.x) + ", " + Format(initialTilt.y) + ", " + Format(initialTilt.z) + ")\n";
-        debugText.text += "   diff: (" + Format(Input.acceleration.x - initialTilt.x) + ", " + Format(Input.acceleration.y - initialTilt.y) + ", " + Format(Input.acceleration.z - initialTilt.z) + ")\n";
+    {
+        if (GyroController.Instance.IsEnabled())
+        { 
+            Quaternion attitude = GyroController.Instance.GetAttitude().Value;
+            debugText.text =  "gyro: (" + Format(attitude.x) + ", " + Format(attitude.y) + ", " + Format(attitude.z) + ", " + Format(attitude.w) + ")\n";
+            debugText.text += "init: (" + Format(initialTilt.x) + ", " + Format(initialTilt.y) + ", " + Format(initialTilt.z) + ", " + Format(initialTilt.w) + ")\n";
+            debugText.text += "diff: (" + Format(attitude.x - initialTilt.x) + ", " + Format(attitude.y - initialTilt.y) + ")\n";
+        }
     }
 
     // Custom String Format
