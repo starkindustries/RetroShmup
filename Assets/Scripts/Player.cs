@@ -66,10 +66,6 @@ public class Player : MonoBehaviour, Damageable
         {
             return;
         }
-
-        #if UNITY_EDITOR
-            MoveByAxis(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        #endif
             
         // Get Player Touch input
         /*
@@ -78,10 +74,17 @@ public class Player : MonoBehaviour, Damageable
             MoveByTouch(touch);
         }*/
 
-        if (GyroController.Instance.IsEnabled())
+        if (Application.platform == RuntimePlatform.WebGLPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
-            MoveByGyro(GyroController.Instance.GetAttitude().Value);
-        }
+            MoveByAxis(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        } 
+        else if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            if (GyroController.Instance.IsEnabled())
+            {
+                MoveByGyro(GyroController.Instance.GetAttitude().Value);
+            }
+        }        
     }
 
     private void FixedUpdate()
