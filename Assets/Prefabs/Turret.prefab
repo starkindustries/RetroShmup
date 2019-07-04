@@ -392,8 +392,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7974769030783762532}
   - component: {fileID: 7974769030783762533}
-  - component: {fileID: 2325138016265966764}
   - component: {fileID: 6686030078198024546}
+  - component: {fileID: 2325138016265966764}
   - component: {fileID: 7445053188223160220}
   m_Layer: 0
   m_Name: Turret
@@ -440,18 +440,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2325138016265966764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7974769030783762534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30119d769f5bbb04e9397d01b996b65d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &6686030078198024546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -478,6 +466,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &2325138016265966764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7974769030783762534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30119d769f5bbb04e9397d01b996b65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7445053188223160220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,9 +491,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 6503776809355826164}
-  projectile: {fileID: 2262955046682056640, guid: 9a1589f827fd4114d92f31ea9a6d475b,
+  projectilePrefab: {fileID: 2262955046682056640, guid: 9a1589f827fd4114d92f31ea9a6d475b,
     type: 3}
   fireRate: 0.5
+  projectileSpeed: 5
   burstMode: 0
   continuousFireTime: 0
   cooldownTime: 0

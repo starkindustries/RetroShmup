@@ -5,10 +5,11 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject projectile;  
+    public GameObject projectilePrefab;
     
     // Fire rate determines the number of rounds per second.
     public float fireRate;
+    public float projectileSpeed;
 
     // Burst mode will allow a weapon to fire continuously and then cooldown
     // ContinuousFireTime is the length of time the weapon can fire without "overheating"
@@ -38,9 +39,13 @@ public class Weapon : MonoBehaviour
     }
 
     public void SingleShot()
-    {        
-        Instantiate(projectile, firePoint.position, firePoint.rotation);
-        if(animator != null)
+    {
+        // Fire the projectile
+        GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.velocity = bullet.transform.right * projectileSpeed;
+
+        if (animator != null)
         {
             animator.SetTrigger("Fire");
         }        
