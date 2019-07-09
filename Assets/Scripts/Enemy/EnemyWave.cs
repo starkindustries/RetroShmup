@@ -11,7 +11,6 @@ public class EnemyWave : MonoBehaviour, Activatable
     public float waveDelay;
     public List<FlightInstruction> instructions;
 
-    private FlightPlan flightPlan;
     private FlightController flightController;
 
     public void Activate()
@@ -22,8 +21,7 @@ public class EnemyWave : MonoBehaviour, Activatable
     private IEnumerator StartWave()
     {
         yield return new WaitForSeconds(waveDelay);
-        flightPlan = new FlightPlan(instructions);
-        flightController = new FlightController(ship, transform.position, Quaternion.Euler(transform.rotation.eulerAngles), flightPlan);
+        flightController = new FlightController(ship, transform.position, Quaternion.Euler(transform.rotation.eulerAngles), instructions);
         flightController.CloneSpawnEnemyWavesSeparatedByDistance(this, enemyCount, separationDistance);
     }
 }
