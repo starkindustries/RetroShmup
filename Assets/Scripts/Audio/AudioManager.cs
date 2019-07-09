@@ -31,9 +31,6 @@ public class AudioManager : MonoBehaviour
         {
             // Add a new AudioSource component for each playable sound        
             sound.SetSource(gameObject.AddComponent<AudioSource>());
-            //AudioSource source = gameObject.AddComponent<AudioSource>();
-            //source.clip = sound.clip;
-            //source.Play();
         }
     }
 
